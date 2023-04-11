@@ -5,12 +5,16 @@ import time
 MQTT_BROKER = "test.mosquitto.org"
 MQTT_TOPIC = "example/topic"
 
-# Define some data to send
-data = {"temperature": 25.5, "humidity": 60}
+# Define the data as a list
+data = [216, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 230, 0]
 
-# Convert the data to a string and send it via MQTT
+# Loop and send the data via MQTT every second
 while True:
+    # Convert the list to a string and send it via MQTT
     payload = str(data)
     publish.single(MQTT_TOPIC, payload, hostname=MQTT_BROKER)
     print("Data sent via MQTT.")
-    time.sleep(5)
+    print(type(data))
+
+    # Wait for 1 second before sending the next data
+    time.sleep(1)
