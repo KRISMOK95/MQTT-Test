@@ -6,7 +6,7 @@ MQTT_BROKER = "test.mosquitto.org"
 MQTT_TOPIC = "example/topic"
 
 # Define the data as a list
-data = [211, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 230, 0]
+data = [214, 12, 33, 22, 32, 0,16, 21, 0, 0, 0, 230, 0]
 
 # Loop and send the data via MQTT every second
 while True:
